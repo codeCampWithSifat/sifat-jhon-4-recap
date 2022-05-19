@@ -4,19 +4,36 @@ import './Cart.css';
 const Cart = (props) => {
     // console.log(props.cart);
     const {cart} = props;
-    let total = 0 ;
-    for(const product of cart) {
-        total = total + product.price ;
-    }
+    // let total = 0 ;
+    // for(const product of cart) {
+    //     total = total + product.price ;
+    // }
 
+    const total = cart.reduce((total,product) => total + product.price, 0)
     
+    const  shipping = total * .20 ;
+    // if(total > 35) {
+    //     shipping = 0
+    // } else if(total > 15) {
+    //     shipping = 4.99
+    // } else if (total > 0) {
+    //     shipping = 12.99
+    // }
+    const tax = (total+ shipping) * .10
 
+    function formetNumber (num) {
+        // const precision = num.toFixed(2);
+        return Number(num.toFixed(2))
+    }
 
     return (
         <div>
             <h3>Order Summary</h3>
-            <h3>Number Of Item {props.cart.length}</h3>
-            <p>Total Price {total}</p>
+            <h4>Number Of Item {props.cart.length}</h4>
+            <p>Total Price : {formetNumber(total)}</p>
+            <p>Shipping Cost : {formetNumber(shipping)}</p>
+            <p>Tax And Vat : {formetNumber(tax)}</p>
+            <h4>Grand Total : {formetNumber(total + shipping + tax)}</h4>
         </div>
     );
 };
