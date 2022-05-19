@@ -1,0 +1,25 @@
+.product {
+  display: flex;
+  border-bottom: 1px solid lightgray;
+  margin-right: 5px;
+}
+
+.product-name {
+  color: rgb(38, 38, 240);
+  font-weight: 400;
+}
+.main-button {
+  background-color: goldenrod;
+  border: none;
+  padding: 5px;
+  width: 120px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+.main-button:hover {
+  background-color: rgb(232, 122, 122);
+  transition: all linear 0.5s;
+  color: aqua;
+  cursor: pointer;
+}
