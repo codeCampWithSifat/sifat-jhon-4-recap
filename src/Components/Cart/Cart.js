@@ -3,7 +3,7 @@ import './Cart.css';
 
 const Cart = (props) => {
     const {cart} = props;
-    // console.log(cart);
+    // console.log(props);
     // let total = 0 ;
     // for(const product of cart) {
     //     total = total + product.price ;
@@ -43,6 +43,8 @@ const Cart = (props) => {
             <p>Shipping Cost : {formetNumber(shipping)}</p>
             <p>Tax And Vat : {formetNumber(tax)}</p>
             <h4>Grand Total : {formetNumber(total + shipping + tax)}</h4>
+            {props.children}
+          
         </div>
     );
 };
